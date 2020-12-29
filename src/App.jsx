@@ -26,28 +26,23 @@ function App() {
             <GlobalStyles></GlobalStyles>
             <Router>
                 <Switch>
-                    <Route path="/">
+                    <Route exact path="/">
                         <BotChat></BotChat>
                     </Route>
-                    <Route path="start">
+                    <Route path="/start">
                         <StartChat></StartChat>
                     </Route>
-                    <Route path="chat">
+                    <Route path="/chat">
                         <Chat></Chat>
                     </Route>
-
-                    <Route path="history">
+                    <Route path="/history">
                         <ChatHistory></ChatHistory>
                     </Route>
-
-                    <Route path="single-history">
+                    <Route path="/single-history">
                         <SingleHistory></SingleHistory>
                     </Route>
-
                 </Switch>
-
             </Router>
-
         </div>
     )
 }

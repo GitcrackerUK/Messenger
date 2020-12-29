@@ -5,7 +5,7 @@ import MainLayout from 'components/layout/Main'
 
 export default function BotChat() {
     return (
-        <MainLayout header="Bot Chat" left="Chat to Bot" right="Chat History">
+        <MainLayout header="Bot Chat" left="Chat to Bot" right="Chat History" leftLink="/start" rightLink="history">
           
         </MainLayout>
     )
