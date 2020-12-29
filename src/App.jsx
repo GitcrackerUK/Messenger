@@ -1,5 +1,9 @@
 import React from 'react';
-import Main from 'components/layout/Main';
+import BotChat from 'components/pages/BotChat';
+import Chat from 'components/pages/Chat';
+import ChatHistory from 'components/pages/ChatHistory';
+import SingleHistory from 'components/pages/SingleHistory';
+import StartChat from 'components/pages/StartChat';
 import {createGlobalStyle} from 'styled-components';
  
 const GlobalStyles = createGlobalStyle`
@@ -19,9 +23,14 @@ function App() {
     return (
         <div>
             <GlobalStyles></GlobalStyles>
-            <Main></Main>
+            <BotChat></BotChat>
+            <StartChat></StartChat>
+            <Chat></Chat>
+            <ChatHistory></ChatHistory>
+            <SingleHistory></SingleHistory>
         </div>
     )
 }
+
 
 export default App
