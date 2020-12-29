@@ -5,7 +5,7 @@ import MainLayout from 'components/layout/Main'
 
 export default function StartChat() {
     return (
-        <MainLayout header="Start Chat" left="Chat History" leftLink="/" rightLink="history" right="Go Back" >
+        <MainLayout header="Start Chat" left="Chat History" leftLink="/history" rightLink="/" right="Go Back" >
           
         </MainLayout>
     )

@@ -3,12 +3,10 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
 background-color:rgba(196, 196, 196, 0.25);
-color:rgba(0, 0, 0, 0.7);
 justify-content:center;
 align-items:center;
 border-radius:5px;
 position:relative;
-font-size:13px;
 display:flex;
 width:170px;
 height:23px;

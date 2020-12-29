@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 import Header from 'components/common/Header';
 import NavButton from 'components/common/Nav-item';
@@ -24,21 +24,26 @@ const MenuWrapper = styled.div`
 display:flex;
 margin:7px auto;
 `
+const StLink = styled(Link)`
+text-decoration:none;
+color:rgba(0, 0, 0, 0.7);
+font-size:13px;
+`
 
-function MainLayout({ children,header,left,leftLink,right,rightLink }) {
+function MainLayout({ children, header, left, leftLink, right, rightLink }) {
     return (
         <MainWrapper>
             <MidWrapper>
                 <Header>{header}</Header>
                 <MenuWrapper>
-                    <Link to={leftLink}><NavButton>{left}</NavButton></Link>
-                   <Link to={rightLink}><NavButton>{right}</NavButton></Link> 
+                    <NavButton>  <StLink to={leftLink}>{left}</StLink></NavButton>
+                    <NavButton>  <StLink to={rightLink}>{right}</StLink></NavButton>
                 </MenuWrapper>
             </MidWrapper>
             <Background>
-            {children}
+                {children}
             </Background>
-           
+
         </MainWrapper>
     )
 }
