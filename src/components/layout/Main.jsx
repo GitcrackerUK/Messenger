@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Header from 'components/common/Header';
 import NavButton from 'components/common/Nav-item';
+import Background from 'components/common/Background';
 
 const MainWrapper = styled.div`
 position:relative;
@@ -10,27 +11,33 @@ font-family:roboto;
 height:500px;
 width:500px;
 `;
+const MidWrapper = styled.div`
+position:absolute;
+top:41px;
+left:76px;
+width:350px;
+margin:auto;
+`
+
 const MenuWrapper = styled.div`
 display:flex;
-width:350px;
 margin:7px auto;
 `
-const MidWrapper = styled.div`
 
-`
-
-function MainLayout() {
+function MainLayout({ children,header,left,right }) {
     return (
         <MainWrapper>
             <MidWrapper>
-                <Header>Main</Header>
+                <Header>{header}</Header>
                 <MenuWrapper>
-                    <NavButton>Chat to Bot</NavButton>
-                    <NavButton>Chat History</NavButton>
+                    <NavButton>{left}</NavButton>
+                    <NavButton>{right}</NavButton>
                 </MenuWrapper>
             </MidWrapper>
-
-
+            <Background>
+            {children}
+            </Background>
+           
         </MainWrapper>
     )
 }
