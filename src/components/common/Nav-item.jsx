@@ -11,17 +11,18 @@ display:flex;
 width:170px;
 height:23px;
 margin:auto;
+font-size:13px;
 `
 const Line = styled.div`
 position:absolute;
-height:2px;
+height:1px;
 width:90%;
-background-color:black;
+background-color:rgba(1, 87, 155, 1);
 opacity:50%;
 bottom:3px;
 `
 
-function NavButton({children}){
+function NavButton({children,to}){
     return(
         <Wrapper>
             {children}

@@ -25,6 +25,7 @@ display:flex;
 margin:7px auto;
 `
 const StLink = styled(Link)`
+margin:auto;
 text-decoration:none;
 color:rgba(0, 0, 0, 0.7);
 font-size:13px;
@@ -36,8 +37,8 @@ function MainLayout({ children, header, left, leftLink, right, rightLink }) {
             <MidWrapper>
                 <Header>{header}</Header>
                 <MenuWrapper>
-                    <NavButton>  <StLink to={leftLink}>{left}</StLink></NavButton>
-                    <NavButton>  <StLink to={rightLink}>{right}</StLink></NavButton>
+                    <StLink to={leftLink}><NavButton> {left}  </NavButton></StLink>
+                    <StLink to={rightLink}><NavButton>{right}</NavButton></StLink>
                 </MenuWrapper>
             </MidWrapper>
             <Background>
