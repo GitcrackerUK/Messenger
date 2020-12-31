@@ -8,6 +8,7 @@ top:120px;
 left:50px;
 width:400px;
 height:330px;
+border-radius:5px;
 `
 export default function Background({ children }) {
     return (
