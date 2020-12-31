@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import StImg from './Thumbnail';
 import Text from './historyText';
 import Button from 'components/common/Button'
+import {Link} from 'react-router-dom'
 
 const Wrapper = styled.div`
 margin:auto;
@@ -20,20 +21,28 @@ justify-content:center;
 height:100%;
 width:50%;
 `
+const ButtonWrapper = styled.div`
+margin:auto;
+width:54px;
+height:45px;
+`
 
-function SingleChat() {
+function SingleChat({srcLeft,srcRight}) {
     return (
         <Wrapper>
             <Half>
                 <Text>10:40</Text>
-                <StImg></StImg>
+                <StImg src={srcLeft}></StImg>
                 <Text>Name 1</Text>
             </Half>
             <Half>
                 <Text>Name 2</Text>
-                <StImg></StImg>
-                <Button>delete</Button>
-
+                <StImg src={srcRight}></StImg>
+                <ButtonWrapper>
+                    <Button>delete</Button>
+                    <Link to='/single-history'><Button>view</Button></Link>
+                    
+                </ButtonWrapper>
             </Half>
 
         </Wrapper>
