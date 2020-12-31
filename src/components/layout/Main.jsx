@@ -6,6 +6,7 @@ import NavButton from 'components/common/Nav-item';
 import Background from 'components/common/Background';
 
 const MainWrapper = styled.div`
+border-radius:5px;
 position:relative;
 background-color:#fff;
 font-family:roboto;
