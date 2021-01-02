@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
 width:280px;
 height:60px;
-margin:auto;
+margin:auto ;
 `
 const Inner =styled.div`
 background-color:rgba(33, 33, 33, 0.08);
