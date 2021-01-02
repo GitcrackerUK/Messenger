@@ -38,8 +38,8 @@ function MainLayout({ children, header, left, leftLink, right, rightLink }) {
             <MidWrapper>
                 <Header>{header}</Header>
                 <MenuWrapper>
-                    <StLink to={leftLink}><NavButton> {left}  </NavButton></StLink>
-                    <StLink to={rightLink}><NavButton>{right}</NavButton></StLink>
+                    <StLink id="leftButton" to={leftLink}><NavButton >  {left}  </NavButton></StLink>
+                    <StLink id="rightButton" to={rightLink}><NavButton>{right}</NavButton></StLink>
                 </MenuWrapper>
             </MidWrapper>
             <Background>
