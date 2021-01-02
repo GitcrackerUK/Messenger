@@ -1,19 +1,68 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useState } from 'react'
 import MainLayout from 'components/layout/Main'
 import Input from 'components/common/input'
 import BlueMessage from 'components/common/BlueResponse'
 import WhiteMessage from 'components/common/WhiteMessage'
 import ChatWindow from 'components/common/chatWrapper'
+const parseString = require('xml2js').parseString
+
+
+
 
 export default function Chat() {
-    const input = <Input label="Chat" placeholder="Input text" underText="Type in whatever you like"></Input>
+    const [formInput, setInput] = useState('');
+    const [chat, setChat] = useState([])
+
+    function toBottom(){
+        const wrapper = document.getElementById("wrapper");
+        console.log('to bottom');
+        if(wrapper.scrollHeight!==null){return wrapper.scrollTop = wrapper.scrollHeight - wrapper.clientHeight}
+        else{return};  
+    }
+  
+    function Submit(e) {
+        e.preventDefault();
+        setChat(prevState =>{
+            return ([...prevState,{
+                user: true,
+                text: formInput
+            }])
+        })
+        axios.get(`https://www.botlibre.com/rest/api/form-chat?&application=4120366723131427615&instance=165&message=${formInput}`)
+            .then((r) => {
+                parseString(r.data, (err, result) => {
+                      setChat(prevState =>{
+                        return [...prevState,{
+                            user: false,
+                            text: result.response.message[0]
+                        }]
+                    })
+                });
+                toBottom()
+            }
+            )
+            document.getElementById("field").reset();
+            toBottom();
+    }
+
+
+    function handleChange(e) {
+        setInput(e.target.value)
+    }
+
+
+
+    const inputField = <form id="field" onSubmit={(e) => {Submit(e)}} onChange={(e) => handleChange(e)}>
+        <Input value={formInput} label="Chat" input={setInput} placeholder="Input text" underText="Type in whatever you like"  ></Input>
+    </form>
+
     return (
         <MainLayout header="Chat" left="Go Back" right="Quit" leftLink="/start" rightLink="/">
-            <ChatWindow input={input}>
-                <BlueMessage>Hello</BlueMessage>
-                <WhiteMessage>Hello,sdasdasd sdfsd sdfsa dsafsadsaffdsa</WhiteMessage>
-                <BlueMessage>Ok, thats great</BlueMessage>
-                <WhiteMessage>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque repellendus, quisquam voluptates dolor laudantium nostrum excepturi nam molestias temporibus quam soluta maiores necessitatibus perferendis tenetur porro nemo cupiditate quis sed!</WhiteMessage>
+            <ChatWindow input={inputField}>
+                {chat.map((p)=>{
+                return p.user?<WhiteMessage>{p.text}</WhiteMessage>:<BlueMessage>{p.text}</BlueMessage> 
+                })}
             </ChatWindow>
         </MainLayout>
     )
