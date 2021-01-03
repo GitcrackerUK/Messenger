@@ -1,11 +1,12 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import {useLocation} from 'react-router-dom'
 import MainLayout from 'components/layout/Main'
 import Input from 'components/common/input'
 import BlueMessage from 'components/common/BlueResponse'
 import WhiteMessage from 'components/common/WhiteMessage'
 import ChatWindow from 'components/common/chatWrapper'
-const parseString = require('xml2js').parseString
+const parseString = require('xml2js').parseString;
 
 
 
@@ -13,7 +14,10 @@ const parseString = require('xml2js').parseString
 export default function Chat() {
     const [formInput, setInput] = useState('');
     const [chat, setChat] = useState([])
+    const data = useLocation() // value of name and id from start component
 
+
+   
     function toBottom(){
         const wrapper = document.getElementById("wrapper");
         if(wrapper.scrollHeight!==null){return wrapper.scrollTop = wrapper.scrollHeight - wrapper.clientHeight}
