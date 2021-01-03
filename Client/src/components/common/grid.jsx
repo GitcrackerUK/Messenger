@@ -1,8 +1,7 @@
 import { user, user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11 } from 'img';
-import React , { useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import StImg from './Thumbnail';
-
 
 const Wrapper = styled.div`
 margin:20px auto;
@@ -12,24 +11,22 @@ display:flex;
 flex-wrap:wrap;
 `
 
-
-export default function Grid() {
+export default function Grid(props) {
     const [users] = useState([user, user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11])
 
     return (
         <Wrapper>
             {
                 users.map((p) => {
-                    return(
-                        <StImg src={p} id={p.substring(p.length-10)} >
+                    return (
+                        <StImg onClick={e => props.handleClick(e.target.id)} src={p} id={p.substring(p.length - 10)} key={p.substring(p.length - 10)}>
                         </StImg>
                     )
 
                 })
-            }
 
+            }
         </Wrapper>
     )
-
 
 }
