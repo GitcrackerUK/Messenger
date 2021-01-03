@@ -53,7 +53,7 @@ export default function Chat() {
 
 
     const inputField = <form id="field" onSubmit={(e) => {Submit(e)}} onChange={(e) => handleChange(e)}>
-        <Input value={formInput} label="Chat" input={setInput} placeholder="Input text" underText="Type in whatever you like"  ></Input>
+        <Input label="Chat"  placeholder="Input text" underText="Type in whatever you like"  ></Input>
     </form>
 
     return (
