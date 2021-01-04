@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import {useLocation} from 'react-router-dom'
 import MainLayout from 'components/layout/Main'
 import Input from 'components/common/input'
@@ -12,6 +12,10 @@ const parseString = require('xml2js').parseString;
 
 
 export default function Chat() {
+    useEffect(() => {
+        console.log(data);
+    }, )
+    
     const [formInput, setInput] = useState('');
     const [chat, setChat] = useState([])
     const data = useLocation() // value of name and id from start component

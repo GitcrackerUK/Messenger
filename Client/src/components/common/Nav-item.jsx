@@ -1,5 +1,5 @@
-
 import styled from 'styled-components'
+import React,{useRef} from 'react'
 
 const Wrapper = styled.div`
 background-color:rgba(196, 196, 196, 0.25);
@@ -22,11 +22,11 @@ opacity:50%;
 bottom:3px;
 `
 
-function NavButton({children,to}){
+function NavButton({ children}){
     return(
-        <Wrapper>
+        <Wrapper >
             {children}
-            <Line></Line>
+            <Line ></Line>
         </Wrapper>
     )
 }
