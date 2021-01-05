@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import React,{useRef} from 'react'
+import styled,{css} from 'styled-components'
+import React from 'react'
 
 const Wrapper = styled.div`
 background-color:rgba(196, 196, 196, 0.25);
@@ -17,16 +17,20 @@ const Line = styled.div`
 position:absolute;
 height:1px;
 width:90%;
-background-color:rgba(1, 87, 155, 1);
 opacity:50%;
 bottom:3px;
+${p=>p.access?css`
+background-color:red;
+`:css`
+background-color:rgba(1, 87, 155, 1)`
+}
 `
 
-function NavButton({ children}){
+function NavButton({red, children}){
     return(
-        <Wrapper >
+        <Wrapper>
             {children}
-            <Line ></Line>
+            <Line access={red} ></Line>
         </Wrapper>
     )
 }

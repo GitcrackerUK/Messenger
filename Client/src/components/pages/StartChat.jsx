@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import Input from 'components/common/input'
 import MainLayout from 'components/layout/Main'
 import styled from 'styled-components'
@@ -22,23 +22,10 @@ font-size:13px;
 export default function StartChat() {
     const [name, setName] = useState({ name: '', minLength: false })
     const [user, setUser] = useState({ id: '', name: '' })
-   
-  
 
- useEffect(
-   ()=>{
-    console.log();
-    if (name.minLength===true) {
-        Text.innerText=""
-        Text.style.color = "rgba(1, 87, 155, 1)"
 
-    }else if (name.minLength===false){
-        
-        Text.innerText="Minimum 3 symbols"
-        Text.style.color = "red"
-    }
-}
- )
+
+    
 
     function handleClick(e) {
         setUser(prev => { return { ...prev, id: e } })
@@ -53,20 +40,20 @@ export default function StartChat() {
         }
     }
 
-   
+
 
     return (
         <MainLayout  header="Start Chat" left="Chat History" leftLink="/history" rightLink="/" right="Go Back" >
             <InputWrapper onChange={(e) => updateName(e)}>
-                <Input
-                    ref={div => Text = div}
+                <Input red={!name.minLength?"red":null}
                     label="Name"
-                    placeholder="Input text">
+                    placeholder="Input text"
+                    underText="Type yor name">
                 </Input>
             </InputWrapper>
             <Grid handleClick={e => handleClick(e)} ></Grid>
             <ButtonWrapper >
-                <StLink  onCLick={updateName} to={name.minLength ? { pathname: '/chat', state: { user } } : '/start'}><NavButton   color={name.minLength}>Start Chat</NavButton></StLink>
+                <StLink onCLick={updateName} to={name.minLength ? { pathname: '/chat', state: { user } } : '/start'}><NavButton red={name.minLength?null:"red"} > Start Chat</NavButton></StLink>
             </ButtonWrapper>
 
 

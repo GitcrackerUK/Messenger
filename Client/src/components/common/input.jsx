@@ -32,7 +32,7 @@ font-size:8px;
 margin: 3px 0px 0px 16px;
 `
 
-export default function Input({ label, placeholder, underText, }) {
+export default function Input({red, label, placeholder, underText, }) {
     return (
         <>
             <Wrapper >
@@ -40,7 +40,7 @@ export default function Input({ label, placeholder, underText, }) {
                     <Label>{label}</Label>
                     <Inp placeholder={placeholder}></Inp>
                 </Inner>
-                <UnderText ref={div => Text = div} >{underText}</UnderText>
+               {red?<UnderText>{underText}</UnderText>:null} 
             </Wrapper>
         </>
     )
