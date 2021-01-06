@@ -1,5 +1,5 @@
 import { user, user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11 } from 'img';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Cel from './Cel'
 
@@ -12,20 +12,29 @@ flex-wrap:wrap;
 `
 
 
-export default function Grid(props) {
+export default function Grid(...props) {
     const [users] = useState([user, user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11])
-    const [tick, setTick]= useState(false)
-
-    function handleTick(){
-        
+    const [tick, setTick] = useState('')
+    const [User,setUser]= useState({
+        name:'',
+        icon:''
+    })
+  
+    function trimmedUrl(str){
+        return str.substring(str.length-10)
     }
+    function getUser(src){
+        setTick(src)
+        console.log(User);
+        setUser(prev=>{return{...prev,icon:trimmedUrl(src)}})
+    }
+   
     return (
         <Wrapper>
             {
                 users.map((p) => {
                     return (
-                        <Cel  tick={true} onClick={e => props.handleClick(e.target.id,)}  src={p} id={p.substring(p.length - 10)} key={p.substring(p.length - 10)}></Cel>
-                        
+                        <Cel  getUser={getUser} tick={tick}  src={p} id={p.substring(p.length - 10)} key={p.substring(p.length - 10)}></Cel>
                     )
 
                 })
