@@ -7,7 +7,6 @@ import NavButton from 'components/common/Nav-item'
 import { Link } from 'react-router-dom'
 import Text from 'components/common/text'
 
-
 const InputWrapper = styled.div`
 margin-top:30px;
 `
@@ -34,10 +33,7 @@ export default function StartChat() {
     const [name, setName] = useState({ name: '', minLength: false })
     const [user, setUser] = useState({ id: '', name: '' })
 
-    function handleClick(e) {
-        // setUser(prev => { return { ...prev, id: e } })
-        console.log(e);
-    }
+
     function updateName(e) {
         setUser(prev => { return { ...prev, name: e.target.value } })
         setName({ name: e.target.value })
@@ -47,10 +43,9 @@ export default function StartChat() {
             setName(p => ({ ...p, minLength: false }))
         }
     }
-
+   
     return (
         <MainLayout header="Start Chat" left="Chat History" leftLink="/history" rightLink="/" right="Go Back" >
-
             <InputWrapper onChange={(e) => updateName(e)}>
                 <Input red={!name.minLength ? "red" : null}
                     label="Name"
@@ -62,7 +57,7 @@ export default function StartChat() {
                 <StText>
                     Choose picture to start.
             </StText>
-                <Grid handleClick={handleClick} ></Grid>
+                <Grid  ></Grid>
             </GridWrapper>
 
             <ButtonWrapper >
@@ -70,7 +65,6 @@ export default function StartChat() {
                     <NavButton red={name.minLength ? null : "red"}> Start Chat</NavButton>
                 </StLink>
             </ButtonWrapper>
-
 
         </MainLayout>
     )
