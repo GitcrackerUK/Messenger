@@ -1,6 +1,3 @@
 <!-- Bot Chat -->
 
-
-
-
 -Axios 
