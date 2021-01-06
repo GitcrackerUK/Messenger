@@ -15,7 +15,7 @@ align-items:center;
 justify-content:center;
 padding:0px;
 margin:0px;
-min-height:1000px;
+height:800px;
 }
 `
 
