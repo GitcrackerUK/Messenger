@@ -12,23 +12,23 @@ flex-wrap:wrap;
 `
 
 
-export default function Grid(...props) {
+export default function Grid({...props}) {
     const [users] = useState([user, user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11])
     const [tick, setTick] = useState('')
-    const [User,setUser]= useState({
-        name:'',
-        icon:''
-    })
-  
+    const [icon,setIcon]= useState('')
+    
+    
     function trimmedUrl(str){
         return str.substring(str.length-10)
     }
+
     function getUser(src){
         setTick(src)
-        console.log(User);
-        setUser(prev=>{return{...prev,icon:trimmedUrl(src)}})
+        setIcon(trimmedUrl(src))
+        props.getId(icon)
     }
-   
+
+
     return (
         <Wrapper>
             {

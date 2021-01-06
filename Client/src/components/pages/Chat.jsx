@@ -9,8 +9,6 @@ import ChatWindow from 'components/common/chatWrapper'
 const parseString = require('xml2js').parseString;
 
 
-
-
 export default function Chat() {
     useEffect(() => {
         console.log(data);
