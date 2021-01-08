@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 import Header from 'components/common/Header';
@@ -32,9 +32,9 @@ color:rgba(0, 0, 0, 0.7);
 font-size:13px;
 `
 
-function MainLayout({ ...props}) {
-   
-    function sendUser(props){
+function MainLayout({ ...props }) {
+
+    function sendUser(props) {
         props.sendChat(props);
     }
 
@@ -43,11 +43,13 @@ function MainLayout({ ...props}) {
             <MidWrapper>
                 <Header>{props.header}</Header>
                 <MenuWrapper>
+                    {/* <StLink onClick={
+                        () => sendUser(props)
+                    } id="leftButton" to={props.leftLink}><NavButton>{props.left}  </NavButton>
+                    </StLink> */}
                     <StLink onClick={
-                       ()=> sendUser(props)
-                    } id="leftButton" to={props.leftLink}><NavButton>{props.left}  </NavButton></StLink>
-                    <StLink  onClick={
-                       ()=> sendUser(props)} id="rightButton" to={props.rightLink}><NavButton> {props.right}</NavButton></StLink>
+                        () => sendUser(props)} id="rightButton" to={props.rightLink}><NavButton> {props.right}</NavButton>
+                    </StLink>
                 </MenuWrapper>
             </MidWrapper>
             <Background>

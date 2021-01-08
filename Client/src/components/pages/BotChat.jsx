@@ -17,7 +17,7 @@ function sendChat(){
 
 export default function BotChat() {
     return (
-        <MainLayout  sendChat={sendChat} header="Bot Chat" left="Chat to Bot" right="Chat History" leftLink="/start" rightLink="history">
+        <MainLayout  sendChat={sendChat} header="Bot Chat" left="Chat History" right="Chat to Bot" leftLink="history" rightLink="/start">
           <Text>Chat Bot is simple app allowing any one to  have conversation with AI. It’s simple and fun. Choose you avatar and type your name.</Text>
           <Robo src={bot} alt="bot-img"></Robo>
         </MainLayout>
