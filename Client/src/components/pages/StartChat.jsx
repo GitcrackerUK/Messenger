@@ -47,8 +47,10 @@ export default function StartChat() {
         setUser(prev => { return { ...prev, icon: e } })
     }
 
+    function sendChat(){
+    }
     return (
-        <MainLayout header="Start Chat" left="Chat History" leftLink="/history" rightLink="/" right="Go Back" >
+        <MainLayout  sendChat={sendChat} header="Start Chat" left="Chat History" leftLink="/history" rightLink="/" right="Go Back" >
             <InputWrapper onChange={(e) => updateName(e)}>
                 <Input red={!name.minLength ? "red" : null}
                     label="Name"
