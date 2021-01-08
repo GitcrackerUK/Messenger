@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 import Header from 'components/common/Header';
@@ -32,20 +32,27 @@ color:rgba(0, 0, 0, 0.7);
 font-size:13px;
 `
 
-function MainLayout({ children, header, left, leftLink, right, rightLink }) {
+function MainLayout({ ...props}) {
+   
+    function sendUser(props){
+        props.sendChat(props);
+    }
+
     return (
-        <MainWrapper>
+        <MainWrapper >
             <MidWrapper>
-                <Header>{header}</Header>
+                <Header>{props.header}</Header>
                 <MenuWrapper>
-                    <StLink id="leftButton" to={leftLink}><NavButton >  {left}  </NavButton></StLink>
-                    <StLink id="rightButton" to={rightLink}><NavButton>{right}</NavButton></StLink>
+                    <StLink onClick={
+                       ()=> sendUser(props)
+                    } id="leftButton" to={props.leftLink}><NavButton>{props.left}  </NavButton></StLink>
+                    <StLink  onClick={
+                       ()=> sendUser(props)} id="rightButton" to={props.rightLink}><NavButton> {props.right}</NavButton></StLink>
                 </MenuWrapper>
             </MidWrapper>
             <Background>
-                {children}
+                {props.children}
             </Background>
-
         </MainWrapper>
     )
 }
