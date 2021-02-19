@@ -2,10 +2,6 @@
 
 It is very simple app allowing anyone to have conversation with AI.
 
-##### BOT LIBRE
-
-Platform with numbers of API's to create interactive messengers with AI. More about on [Home Page](https://www.botlibre.com/)
-
 ##### Tools used to create Bot Chat
 
 - BotLibre API
@@ -22,3 +18,7 @@ Platform with numbers of API's to create interactive messengers with AI. More ab
 - XML2JS
   - parsing response data in xml to json
 - Styled Components
+
+##### BOT LIBRE
+
+Platform with numbers of API's to create interactive messengers with AI. More about on [Home Page](https://www.botlibre.com/)
