@@ -5,7 +5,7 @@ Bot Chat is a simple app allowing any one to have conversation\
               you will get response to your message. Some responses are even\
               funny but sometimes without sense but it's fine, we don't need\
               super computer to tell us what to do. It is design in figma,\
-              programmed in React and hosted on Gcloud.\
+              programmed in React and hosted on Gcloud.
 
 ##### Tools used to create Bot Chat
 
