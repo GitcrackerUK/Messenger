@@ -5,18 +5,18 @@ It is very simple app allowing anyone to have conversation with AI.
 ##### Tools used to create Bot Chat
 
 - BotLibre API
-  - sending get request to BotLibre API with string message and getting back response accordingly to request.
+  - provides AI get response in XML format, accordingly to get request sent from Client or Server.
 - React
-  - create main components.
-  - create reuseable components like buttons, inputs and many more.
+  - creates main components.
+  - creates reuseable components like buttons, inputs and many more.
 - Create-React-App
   - quick react app boilerplate/scaffolding
 - React-Router-Dom
-  - displaying components separately accordingly to a url route
+  - displays components separately accordingly to a url route
 - Axios
-  - send get/post request to external API
+  - sends get/post request to external API
 - XML2JS
-  - parsing response data in xml to json
+  - parses response data in xml to json
 - Styled Components
 
 ##### BOT LIBRE
