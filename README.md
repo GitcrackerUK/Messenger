@@ -8,6 +8,7 @@ Platform with numbers of API's to create interactive messengers with AI. More ab
 
 ##### Tools used to create Bot Chat
 
+- BotLibre API
 - React
   - create main components.
   - create reuseable components like buttons, inputs and many more.
@@ -20,4 +21,3 @@ Platform with numbers of API's to create interactive messengers with AI. More ab
 - XML2JS
   - parsing data in xml response to json
 - Styled Components
-- BotLibre API
