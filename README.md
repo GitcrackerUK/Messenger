@@ -19,5 +19,5 @@ Platform with numbers of API's to create interactive messengers with AI. More ab
 - Axios
   - send get/post request to external API
 - XML2JS
-  - parsing data in xml response to json
+  - parsing response data in xml to json
 - Styled Components
