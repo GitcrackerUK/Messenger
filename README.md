@@ -4,7 +4,7 @@ It is very simple app allowing anyone to have conversation with AI.
 
 ##### BOT LIBRE
 
-Platform with numbers of API's to create interactive messengers with AI. More about on [Take me to Home Page](https://www.botlibre.com/)
+Platform with numbers of API's to create interactive messengers with AI. More about on [Home Page](https://www.botlibre.com/)
 
 ##### Tools used to create Bot Chat
 
